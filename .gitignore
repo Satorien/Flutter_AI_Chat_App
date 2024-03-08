@@ -12,7 +12,7 @@ migrate_working_dir/
 .vscode/launch.json
 .vscode/settings.json
 google-services.json
-
+firebase_options.dart
 
 # IntelliJ related
 *.iml

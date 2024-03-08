@@ -25,8 +25,7 @@ class _ChatPageState extends State<ChatPage>{
   final ChatService _chatService = ChatService();
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   bool _loading = false;
-  // static const _apiKey = String.fromEnvironment('API_KEY');
-  static const _apiKey = "AIzaSyBj8uSLJhqz-6HZ7E8Ml9PTR9MpZMQ_SA8";
+  static const _apiKey = String.fromEnvironment('API_KEY');
 
   @override
   void initState() {
