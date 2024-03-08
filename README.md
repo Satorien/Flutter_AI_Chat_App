@@ -1,16 +1,9 @@
-# flutter_application_1
+# Flutter AI Chat App
 
-A new Flutter project.
+This is a Chat app to  communicate with AI and another user at the same time.
+Uses Flutter & Firebase to implement this app.
+LLM used in this app is the Gemini API provided by Google Generative AI
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Note
+As a reference, I added the API key for Google Services in launch.json file when debugging on VSCode

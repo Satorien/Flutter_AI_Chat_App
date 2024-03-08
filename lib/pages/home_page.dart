@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
             width: double.infinity,
             child: Text("スケジュール", style: TextStyle(color: myTheme.colorScheme.onSecondary, fontSize: 20)),
           ),
-          Expanded(child: _buildTaskList(),),
+          // Expanded(child: _buildTaskList(),),
         ],
       ),
       backgroundColor: myTheme.colorScheme.background,
@@ -93,42 +93,42 @@ class _HomePageState extends State<HomePage> {
       );
   }
 
-  Widget _buildTaskList() {
-    return StreamBuilder<QuerySnapshot>(
-      stream: FirebaseFirestore.instance.collection("tasks").snapshots(),
-      builder: (context, snapshot) {
-        if (snapshot.hasError) {
-          return const Text("エラーが発生しました");
-        }
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Text('ロード中');
-        }
-        return Column(children: [
-          ListView(
-            children: snapshot.data!.docs.map<Widget>((doc) => _buildTaskListItem(doc)).toList(),
-           ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => AddTaskPage()),);
-            },
-            child: const Text("タスクを追加"),
-          ),
-          ],
-        );
-      },
-    );
-  }
+//   Widget _buildTaskList() {
+//     return StreamBuilder<QuerySnapshot>(
+//       stream: FirebaseFirestore.instance.collection("tasks").snapshots(),
+//       builder: (context, snapshot) {
+//         if (snapshot.hasError) {
+//           return const Text("エラーが発生しました");
+//         }
+//         if (snapshot.connectionState == ConnectionState.waiting) {
+//           return const Text('ロード中');
+//         }
+//         return Column(children: [
+//           ListView(
+//             children: snapshot.data!.docs.map<Widget>((doc) => _buildTaskListItem(doc)).toList(),
+//            ),
+//           ElevatedButton(
+//             onPressed: () {
+//               Navigator.push(context, MaterialPageRoute(builder: (context) => AddTaskPage()),);
+//             },
+//             child: const Text("タスクを追加"),
+//           ),
+//           ],
+//         );
+//       },
+//     );
+//   }
 
-  Widget _buildTaskListItem(DocumentSnapshot document) {
-    Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
-      return Container(
-        decoration: const BoxDecoration(
-          border: Border(bottom: BorderSide(color: Colors.black)),
-        ),
-        child: ListTile(
-          title: Text(data["title"]),
-          subtitle: Text(data["description"]),
-        ),
-      );
-  }
+//   Widget _buildTaskListItem(DocumentSnapshot document) {
+//     Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
+//       return Container(
+//         decoration: const BoxDecoration(
+//           border: Border(bottom: BorderSide(color: Colors.black)),
+//         ),
+//         child: ListTile(
+//           title: Text(data["title"]),
+//           subtitle: Text(data["description"]),
+//         ),
+      // );
+  // }
 }
